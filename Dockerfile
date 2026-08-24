@@ -10,4 +10,5 @@ RUN python3 -m pip install --no-cache-dir -r requirements.txt
 COPY . ./
 
 # 启动命令，online_image项目，gunicorn
-CMD ["gunicorn","online_image:app","--bind","0.0.0.0:${PORT}"]
+# CMD ["gunicorn","online_image:app","--bind","0.0.0.0:${PORT}"]
+CMD gunicorn online_image:app --bind 0.0.0.0:${PORT}
